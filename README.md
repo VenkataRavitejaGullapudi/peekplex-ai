@@ -2,6 +2,9 @@
 
 - Created using Create React App
 - Configured Tailwind CSS
+- Header
+- Login Form
+- SignUp form
 
 ## Features
 - Sign In/ SignUp
@@ -18,4 +21,3 @@
 - Netflix gpt
     - Search bar
     - Movie suggestions
-    
