@@ -3,8 +3,11 @@
 - Created using Create React App
 - Configured Tailwind CSS
 - Header
+- Routing App
 - Login Form
 - SignUp form
+- Form Validation
+- useRef Hook
 
 ## Features
 - Sign In/ SignUp
