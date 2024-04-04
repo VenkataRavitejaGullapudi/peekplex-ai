@@ -14,5 +14,5 @@ export const checkLoginValid = (email, password, fullName) => {
     ? { valid: false, message: "Password is not valid" }
     : (fullName !== undefined) & !isNameValid
     ? { valid: false, message: "Full Name is not valid" }
-    : { valid: true, message: "" };
+    : { valid: true, message: null };
 };
