@@ -11,7 +11,13 @@
 - Firebase Setup
 - Deploying app to firebase
 - Create Signup user account firebase
-- 
+- Implement sign in user api
+- Created redux store with user slice
+- Implemented validations
+- Profile updation
+- Implemented signout
+- Fetch from TMDB Movies
+- Fixing signup user display name and profile picture update
 
 
 ## Features

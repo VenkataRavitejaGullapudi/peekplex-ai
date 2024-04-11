@@ -4,10 +4,15 @@ import { checkLoginValid } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
 
   const email = useRef(null);
@@ -36,8 +41,8 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-            // Logged in
-            console.log(userCredential)
+          // Logged in
+          console.log(userCredential);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -55,6 +60,22 @@ const Login = () => {
           // Signed up & in
           const user = userCredential.user;
           console.log(user);
+          updateProfile(user, {
+            displayName: fullName.current.value,
+            photoURL: USER_AVATAR,
+          })
+            .then(() => {
+              const { displayName, photoURL } = firebaseAuth.currentUser;
+              dispatch(
+                updateUser({
+                  displayName,
+                  photoURL,
+                })
+              );
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -75,8 +96,8 @@ const Login = () => {
       </div>
       <div className="-z-10 fixed top-0 bottom-0 left-0 right-0">
         <img
-          className="bg-fixed h-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+          className="bg-fixed w-full h-full"
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="backgroundImage"
         />
       </div>
