@@ -9,7 +9,7 @@ import {
 import { firebaseAuth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { LOGIN_BACKGROUND_IMG, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -42,7 +42,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Logged in
-          console.log(userCredential);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -59,7 +58,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up & in
           const user = userCredential.user;
-          console.log(user);
           updateProfile(user, {
             displayName: fullName.current.value,
             photoURL: USER_AVATAR,
@@ -97,7 +95,7 @@ const Login = () => {
       <div className="-z-10 fixed top-0 bottom-0 left-0 right-0">
         <img
           className="bg-fixed w-full h-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={LOGIN_BACKGROUND_IMG}
           alt="backgroundImage"
         />
       </div>
@@ -134,14 +132,14 @@ const Login = () => {
           />
           <p className="font-bold text-xs text-red-500">{errorMessage}</p>
           <button
-            className="p-2 my-3 w-full bg-red-700 rounded-lg"
+            className="p-2 my-3 w-full bg-primary rounded-lg"
             onClick={handleButtonClick}
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
           <p className="m-2 py-4 cursor-pointer" onClick={toggleSignInForm}>
             {isSignInForm
-              ? "New to Netflix? Sign Up Now"
+              ? "New to Peekplex? Sign Up Now"
               : "Already registered? Sign In Now."}
           </p>
         </form>

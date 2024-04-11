@@ -1,4 +1,4 @@
-# Netflix GPT
+# Peekplex GPT
 
 - Created using Create React App
 - Configured Tailwind CSS
@@ -16,8 +16,13 @@
 - Implemented validations
 - Profile updation
 - Implemented signout
-- Fetch from TMDB Movies
 - Fixing signup user display name and profile picture update
+- Register TMDB API & Created an app to get access token
+- Get Data from the now playing movies using list API
+- Custom hook for now playing movies and getting videos by movie id
+- Planning for main continaer & secondary container
+- Fetch data from trailer video
+- Styling trailer video
 
 
 ## Features
@@ -32,6 +37,6 @@
         - Movie list * N
         - Vertically scrollable
 
-- Netflix gpt
+- Peekplex gpt
     - Search bar
     - Movie suggestions

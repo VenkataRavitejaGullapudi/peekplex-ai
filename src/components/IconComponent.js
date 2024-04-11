@@ -5,7 +5,7 @@ import iconsData from "../utils/icons.json";
 
 const IconComponent = ({ name, alt }) => {
   return (
-    <div className="netflix-icon-wrapper">
+    <div className="peekplex-icon-wrapper">
       {iconsData?.[name] && (
         <div dangerouslySetInnerHTML={{ __html: iconsData[name] }} />
       )}

@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "site": "peekplex",
     "ignore": [
       "firebase.json",
       "**/.*",
