@@ -12,8 +12,20 @@ export const MOVIE_API_OPTIONS = {
   },
 };
 export const NOW_PLAYING_MOVIES_API_ENDPOINT =
-  "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+  "https://api.themoviedb.org/3/movie/now_playing?page=1";
+
+export const POPULAR_MOVIES_API_ENDPOINT =
+  "https://api.themoviedb.org/3/movie/popular?page=1";
+
+export const TOP_RATED_MOVIES_API_ENDPOINT =
+  "https://api.themoviedb.org/3/movie/top_rated?page=1";
+
+export const UPCOMING_MOVIES_API_ENDPOINT =
+  "https://api.themoviedb.org/3/movie/upcoming?page=1";
+
 export const MOVIE_VIDEOS_ENDPOINT =
   "https://api.themoviedb.org/3/movie/{movie_id}/videos";
 
-export const TRAILER_VIDEO_TYPE = "Trailer"
+export const TRAILER_VIDEO_TYPE = "Trailer";
+export const TMDB_IMAGES_PATH =
+  "https://image.tmdb.org/t/p/w{width}{imagePath}";

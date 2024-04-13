@@ -23,6 +23,7 @@
 - Planning for main continaer & secondary container
 - Fetch data from trailer video
 - Styling trailer video
+- Secondary component
 
 
 ## Features
