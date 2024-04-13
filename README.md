@@ -24,6 +24,9 @@
 - Fetch data from trailer video
 - Styling trailer video
 - Secondary component
+- Build Movie List and card
+- TMDB images CDN URL
+- Hooks for each movie list
 
 
 ## Features
