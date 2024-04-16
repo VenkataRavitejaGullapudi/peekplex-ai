@@ -9,9 +9,12 @@ const aiSlice = createSlice({
     toggleAISearchView: (state) => {
       state.showAISearch = !state.showAISearch;
     },
+    closeAISearchView: (state) => {
+      state.showAISearch = false
+    }
   },
 });
 
-export const { toggleAISearchView } = aiSlice.actions;
+export const { toggleAISearchView, closeAISearchView } = aiSlice.actions;
 
 export default aiSlice.reducer;

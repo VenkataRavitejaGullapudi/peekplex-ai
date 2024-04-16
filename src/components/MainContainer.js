@@ -6,7 +6,6 @@ const MainContainer = ({ carouselMovies = [] }) => {
   if (carouselMovies?.length <= 0) return;
   const mainMovie = carouselMovies[0];
 
-  console.log(mainMovie);
   const { original_title, overview, id } = mainMovie;
 
   return (
