@@ -27,6 +27,8 @@
 - Build Movie List and card
 - TMDB images CDN URL
 - Hooks for each movie list
+- AI search bar
+- Multi language feature in search bar page
 
 
 ## Features

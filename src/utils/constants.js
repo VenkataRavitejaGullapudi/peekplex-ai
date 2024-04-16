@@ -2,6 +2,7 @@ export const LOGO = "./logo1-white.png";
 export const USER_AVATAR =
   "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png";
 export const LOGIN_BACKGROUND_IMG = "./login-background.jpeg";
+export const SEARCH_BACKGROUND_IMG = "./search-background.jpeg";
 
 export const MOVIE_API_OPTIONS = {
   method: "GET",
@@ -29,3 +30,22 @@ export const MOVIE_VIDEOS_ENDPOINT =
 export const TRAILER_VIDEO_TYPE = "Trailer";
 export const TMDB_IMAGES_PATH =
   "https://image.tmdb.org/t/p/w{width}{imagePath}";
+
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "te",
+    name: "Telugu",
+  },
+  {
+    identifier: "hi",
+    name: "Hindi",
+  },
+  {
+    identifier: "es",
+    name: "Spanish",
+  },
+];
