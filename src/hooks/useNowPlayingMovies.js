@@ -13,6 +13,10 @@ export const useNowPlayingMovies = () => {
   // Fetching data from TMDB API and update in store
   const dispatch = useDispatch();
 
+  const nowPlayingMovies = useSelector(
+    (store) => store.movies.nowPlayingMovies
+  );
+
   const getNowPlayingMovies = async () => {
     let response = await fetch(
       NOW_PLAYING_MOVIES_API_ENDPOINT,
@@ -34,7 +38,7 @@ export const useNowPlayingMovies = () => {
   };
 
   useEffect(() => {
-    getNowPlayingMovies();
+    !nowPlayingMovies?.length && getNowPlayingMovies();
   }, []);
 
   return { getTopFiveNowPlayingMovies };

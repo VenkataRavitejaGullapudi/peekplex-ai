@@ -11,11 +11,10 @@ export const usePopularMovies = () => {
   // Fetching data from TMDB API and update in store
   const dispatch = useDispatch();
 
+  const popularMovies = useSelector((store) => store.movies.popularMovies);
+
   const getPopularMovies = async () => {
-    let response = await fetch(
-      POPULAR_MOVIES_API_ENDPOINT,
-      MOVIE_API_OPTIONS
-    );
+    let response = await fetch(POPULAR_MOVIES_API_ENDPOINT, MOVIE_API_OPTIONS);
     response = await response.json();
     dispatch(addPopularMovies(response.results));
   };
@@ -32,7 +31,7 @@ export const usePopularMovies = () => {
   };
 
   useEffect(() => {
-    getPopularMovies();
+    !popularMovies?.length && getPopularMovies();
   }, []);
 
   return { getTopFivePopularMovies };
