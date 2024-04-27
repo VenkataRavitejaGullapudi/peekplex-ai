@@ -102,7 +102,7 @@ const Login = () => {
       <div className="flex h-full justify-center items-center text-white">
         <form
           method="POST"
-          className="w-6/12 px-8 py-10  bg-black rounded-lg bg-opacity-80"
+          className="w-10/12 md:w-6/12 px-8 py-10  bg-black rounded-lg bg-opacity-80"
           onSubmit={(e) => {
             e.preventDefault();
           }}

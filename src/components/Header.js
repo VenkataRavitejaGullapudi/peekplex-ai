@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { addUser, removeUser } from "../utils/userSlice";
@@ -11,6 +11,8 @@ import { changeLanguage } from "../utils/configSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const user = useSelector((store) => store.user);
   const showAISearch = useSelector((store) => store.aiSearch.showAISearch);
 
@@ -23,7 +25,7 @@ const Header = () => {
           // User signed in
           const { uid, email, displayName, photoURL } = user;
           dispatch(addUser({ uid, email, displayName, photoURL }));
-          navigate("/browse");
+          location.pathname === "/" && navigate("/browse");
         } else {
           // User signed out
           dispatch(removeUser());
@@ -49,6 +51,7 @@ const Header = () => {
     dispatch(toggleAISearchView());
   };
   const closeAISearch = () => {
+    location.pathname !== "/browse" && navigate("/browse");
     dispatch(closeAISearchView());
   };
 
@@ -58,8 +61,8 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-10 flex px-8 py-2 bg-opacity-30 bg-gradient-to-b from-black justify-between">
-      <div className="w-40 py-2">
+    <div className="absolute top-0 left-0 right-0 z-10 flex px-4 py-2 bg-opacity-30 bg-gradient-to-b from-black justify-between">
+      <div className="w-28 py-2">
         <img
           className="cursor-pointer"
           src={LOGO}
@@ -67,7 +70,7 @@ const Header = () => {
           onClick={closeAISearch}
         />
       </div>
-      <div className="flex p-2 mx-3">
+      <div className="flex py-2 mx-2 text-xs">
         {user && (
           <div className="flex items-center gap-2">
             {showAISearch && (
@@ -76,14 +79,16 @@ const Header = () => {
                 className="py-1 px-3 bg-gray-900 text-white border-gray-700 border-2 rounded-md"
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
-                  <option value={lang.identifier} key={lang.identifier}>{lang.name}</option>
+                  <option value={lang.identifier} key={lang.identifier}>
+                    {lang.name}
+                  </option>
                 ))}
               </select>
             )}
 
             {!showAISearch && (
               <button
-                className="py-1 px-4 rounded text-white bg-blue-700 mx-2 flex gap-2 items-center hover:bg-opacity-60 bord"
+                className="py-1 px-3 rounded text-white bg-blue-700 flex gap-2 items-center hover:bg-opacity-60 bord"
                 onClick={handleAISearchClick}
               >
                 <svg
@@ -105,7 +110,7 @@ const Header = () => {
                 Ask AI
               </button>
             )}
-            <div className="flex-1 w-10 h-10">
+            <div className="flex-1 w-8 h-8">
               <img alt="userIcon" src={user?.photoURL} />
             </div>
             <button className="flex cursor-pointer" onClick={handleSignOut}>

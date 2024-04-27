@@ -29,6 +29,12 @@
 - Hooks for each movie list
 - AI search bar
 - Multi language feature in search bar page
+- Responsive
+- Cohere integration
+- Prompting
+- Movie search with TMDB
+- Memoization
+- Moved keys to .env
 
 
 ## Features

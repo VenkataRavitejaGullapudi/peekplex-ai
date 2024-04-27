@@ -22,7 +22,7 @@ const AIMovieSuggestions = () => {
         </div>
       )}
       {!isAISearchLoading && !filteredResults?.length && (
-        <h3 className="w-full font-bold self-center justify-self-center text-2xl text-gray-200 text-center">
+        <h3 className="w-full font-bold self-center justify-self-center text-lg text-gray-200 text-center">
           No Suggested movies 🥲. <br/><br/>
           Lets do a search in the above input.
         </h3>
@@ -34,7 +34,7 @@ const AIMovieSuggestions = () => {
             {filteredResults?.map(
               (movie) =>
                 movie?.poster_path && (
-                  <MovieCard key={movie.id} imagePath={movie?.poster_path} />
+                  <MovieCard key={movie.id} imagePath={movie?.poster_path} movieId={movie.id} />
                 )
             )}
           </div>

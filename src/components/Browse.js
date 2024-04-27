@@ -25,12 +25,12 @@ const Browse = () => {
       {showAISearch ? (
         <AISearchPage />
       ) : (
-        <>
+        <div className="bg-black">
           <MainContainer
             carouselMovies={getTopFiveNowPlayingMovies(nowPlayingMovies)}
           />
           <SecondaryContainer />
-        </>
+        </div>
       )}
       {/* 
         - Main container

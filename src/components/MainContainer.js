@@ -9,8 +9,8 @@ const MainContainer = ({ carouselMovies = [] }) => {
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <div className="relative">
-      <VideoTitle title={original_title} overview={overview} />
+    <div className="relative pt-[20%] sm:pt-0">
+      <VideoTitle movieId={id} title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>
   );

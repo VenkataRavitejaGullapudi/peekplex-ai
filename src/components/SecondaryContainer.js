@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies || {});
   return (
-    <div className="bg-black px-5 flex flex-col gap-5">
-      <div className="relative z-5 -mt-[12%]">
+    <div className="bg-black px-5">
+      <div className="relative z-5 -mt-[12%] flex flex-col gap-10">
         {movies.nowPlayingMovies?.length && (
           <MovieList title={"Now playing"} movies={movies.nowPlayingMovies} />
         )}

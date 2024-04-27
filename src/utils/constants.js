@@ -2,7 +2,7 @@ export const LOGO = "./logo1-white.png";
 export const USER_AVATAR =
   "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png";
 export const LOGIN_BACKGROUND_IMG = "./login-background.jpeg";
-export const SEARCH_BACKGROUND_IMG = "./search-background.jpeg";
+export const SEARCH_BACKGROUND_IMG = "./search_logo.jpeg";
 
 export const MOVIE_API_OPTIONS = {
   method: "GET",
