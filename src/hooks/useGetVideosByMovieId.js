@@ -1,10 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
 import {
   MOVIE_API_OPTIONS,
   MOVIE_VIDEOS_ENDPOINT,
   TRAILER_VIDEO_TYPE,
 } from "../utils/constants";
+import { setLandingCarouselVideo } from "../utils/moviesSlice";
+import { useEffect } from "react";
 
 export const useGetVideosByMovieId = (movieId) => {
+  const landingCarouselVideo = useSelector(
+    (store) => store.movies.landingCarouselVideo
+  );
+  const dispatch = useDispatch()
+
   const getMovieVideos = async () => {
     let response = await fetch(
       MOVIE_VIDEOS_ENDPOINT.replace("{movie_id}", movieId),
@@ -33,10 +41,20 @@ export const useGetVideosByMovieId = (movieId) => {
   const getCarouselVideo = async () => {
     const movieVideos = (await getMovieVideos()) || [];
     const latestTrailerVideo = getMovieLatestTrailerVideo(movieVideos);
-
     if (latestTrailerVideo === null) return movieVideos[0];
     return latestTrailerVideo;
   };
+
+  useEffect(() => {
+    !landingCarouselVideo &&
+      getCarouselVideo()
+        .then((video) => {
+          video && dispatch(setLandingCarouselVideo(video));
+        })
+        .catch((err) =>
+          console.error("error while fetching movie video for carousel", err)
+        );
+  }, []);
 
   return { getCarouselVideo, getMovieLatestTrailerVideo, getMovieVideos };
 };
