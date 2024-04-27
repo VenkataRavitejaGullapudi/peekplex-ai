@@ -48,6 +48,7 @@ const Header = () => {
       });
   };
   const handleAISearchClick = () => {
+    location.pathname !== "/browse" && navigate("/browse");
     dispatch(toggleAISearchView());
   };
   const closeAISearch = () => {
