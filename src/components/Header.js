@@ -58,7 +58,7 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-10 flex px-8 py-2 bg-gradient-to-b from-black justify-between">
+    <div className="absolute top-0 left-0 right-0 z-10 flex px-8 py-2 bg-opacity-30 bg-gradient-to-b from-black justify-between">
       <div className="w-40 py-2">
         <img
           className="cursor-pointer"
@@ -76,7 +76,7 @@ const Header = () => {
                 className="py-1 px-3 bg-gray-900 text-white border-gray-700 border-2 rounded-md"
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
-                  <option value={lang.identifier}>{lang.name}</option>
+                  <option value={lang.identifier} key={lang.identifier}>{lang.name}</option>
                 ))}
               </select>
             )}

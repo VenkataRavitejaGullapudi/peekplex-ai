@@ -9,7 +9,7 @@ export const MOVIE_API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNWQzMDFlODYyMjUwOWQ3NTY0YzFmZmY0NTY4YmI4ZSIsInN1YiI6IjY2MTdhYjg1OTBiODdlMDE3YzNkYmQ0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9b9tqwos8_cknTDtbjCDwXlOPaKFj7ShDr50O5EiNnU",
+      `Bearer ${process.env.REACT_APP_TMDB_API_KEY}`,
   },
 };
 export const NOW_PLAYING_MOVIES_API_ENDPOINT =
@@ -30,6 +30,9 @@ export const MOVIE_VIDEOS_ENDPOINT =
 export const TRAILER_VIDEO_TYPE = "Trailer";
 export const TMDB_IMAGES_PATH =
   "https://image.tmdb.org/t/p/w{width}{imagePath}";
+
+export const MOVIE_SEARCH_ENDPOINT = "https://api.themoviedb.org/3/search/movie?query={query}&include_adult={include_adult}&year={year}&language={language}&page={pageId}"
+
 
 export const SUPPORTED_LANGUAGES = [
   {
