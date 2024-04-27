@@ -88,7 +88,7 @@ const Header = () => {
 
             {!showAISearch && (
               <button
-                className="py-1 px-3 rounded text-white bg-blue-700 flex gap-2 items-center hover:bg-opacity-60 bord"
+                className="animate-spin-fast animate-gradient py-1 px-3 rounded text-white bg-blue-600 flex gap-2 items-center hover:bg-opacity-60 border"
                 onClick={handleAISearchClick}
               >
                 <svg

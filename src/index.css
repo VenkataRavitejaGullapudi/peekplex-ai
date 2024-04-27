@@ -13,6 +13,46 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes change-color {
+  0% {
+    border-width: 3px;
+    border-color: rgb(255, 0, 255);
+  }
+  25% {
+    border-width: 3px;
+    border-color: #048a98;
+  }
+  50% {
+    border-width: 3px;
+    border-color: rgb(114, 109, 114);
+  }
+  75% {
+    border-width: 3px;
+    border-color: #ffcb05;
+  }
+  100% {
+    border-width: 3px;
+    border-color: #02a402;
+  }
+}
+
+.animate-spin-fast {
+  animation: spin 0.1s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.animate-gradient {
+  animation: change-color 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
