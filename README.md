@@ -1,8 +1,8 @@
-**#Peekplex: AI-Powered Movie Exploration**
+# Peekplex: AI-Powered Movie Exploration
 
 Peekplex is a cutting-edge web application that empowers you to delve into the world of cinema with the combined brilliance of human intuition and AI-driven search.
 
-**##Key Technologies:**
+##Key Technologies:
 
 - React: Building a dynamic and interactive user interface.
 - Tailwind CSS: Streamlined utility-first styling for a clean and responsive experience.
@@ -10,7 +10,7 @@ Peekplex is a cutting-edge web application that empowers you to delve into the w
 - TMDB API: Accessing a vast collection of movie information and trailers.
 - Cohere (or similar AI service): Implementing AI-powered movie search capabilities.
 
-**##Features:**
+##Features:
 
 - **Intuitive User Experience:**
     - Streamlined sign-up and login process for personalized access.
@@ -20,7 +20,7 @@ Peekplex is a cutting-edge web application that empowers you to delve into the w
 - **AI-Powered Search:**
     - Leverage the power of AI to find movies that perfectly align with your interests.
 
-**##Technical Details:**
+##Technical Details:
 
 - Built with React and Redux.
 - Utilizes form validation and hooks for efficient user input handling.
@@ -28,7 +28,7 @@ Peekplex is a cutting-edge web application that empowers you to delve into the w
 - Prioritizes responsiveness across various screen sizes.
 - Securely stores API keys in a `.env` file.
 
-**##Note:**
+##Note:
 - It is a pure frontend application.
 
 ##### Project ScratchPad.
