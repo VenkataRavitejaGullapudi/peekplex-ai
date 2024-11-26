@@ -1,6 +1,6 @@
 # Peekplex: AI-Powered Movie Exploration
-
 Peekplex is a cutting-edge web application that empowers you to delve into the world of cinema with the combined brilliance of human intuition and AI-driven search.
+https://peekplex.web.app/browse
 
 ## Key Technologies:
 
@@ -83,3 +83,5 @@ Peekplex is a cutting-edge web application that empowers you to delve into the w
 - Peekplex gpt
     - Search bar
     - Movie suggestions
+
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/b416af04-0eba-4049-8711-5c3507bf764c">
